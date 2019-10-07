@@ -84,18 +84,6 @@ There are some complications:
 * Not all patents are cited by other patents
 * Lastly, the NaN/Null value used by PySpark makes sorting values involving Nan/Null and numeric values problematic; you're best filtering out the `null` values and then sorting.
 
-## What you need to do and hand in
-
-You're going to work on two solutions, one using the RDD API and the other using the DataFrame API.
-
-The DataFrame API will execute much faster than the RDD API because it casts the computations into the underlying Java VM; it is recommended you finish that implementation using the [https://coding.csel.io](https://coding.csel.io) coding environment; select the "csci 4253" server.
-
-For the DataFrame solution, you should implement your code using the starter code in the Jupyter notebook `Lab-04-patent-dataframe.ipynb`. That implementation should produce the reference output in the figure shown above.
-
-For the RDD solution, you should implement your code using the starter code in the Jupyter notebook `Lab-04-patent-RDD.ipynb`. That implementation should also produce the same reference output as shown above, although it will look slighly different since it's in the RDD form.
-
-You should document your solution process in the Jupyter notebook -- just add MarkDown cells and explain what you're doing at each step. You should commit your solution to GitHub -- you'll find that the current output will be viewable when looking at notebooks in GitHub.
-
 ### Some Suggestions
 
 In both the RDD and DataFrame form, it's possible to "cache" an intermediate RDD/Dataframe (using the `.cache()` function). This can be useful when you're trying to figure out how to extract the appropriate data, etc. This is particularly important for the output of the `.join()` operations and particularly for the RDD solution -- that operation is *slow* and having to recompute it each time you look at data or attempt the next step is frustrating.
